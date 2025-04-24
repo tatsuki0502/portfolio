@@ -1,48 +1,63 @@
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: #f4f4f4;
-    color: #333;
-  }
-  
-  header {
-    background-color: #1e40af;
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-  
-  .container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-  
-  section {
-    margin-bottom: 3rem;
-  }
-  
-  h2, h3 {
-    color: #1e40af;
-  }
-  
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #1e40af;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h1, h2 {
+  color: #1e40af;
+}
+
+.skills, .works {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #1e40af;
+  color: white;
+}
+
+/* スマホ対応用のレスポンシブ設定 */
+@media (max-width: 600px) {
   .skills, .works {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr; /* カードを1列にする */
   }
-  
+
+  header {
+    font-size: 0.9rem;
+    padding: 1.5rem 1rem;
+  }
+
   .card {
-    background: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 0.95rem;
   }
-  
-  footer {
-    text-align: center;
-    padding: 2rem;
-    background: #1e40af;
-    color: white;
-  }
-  
+}
