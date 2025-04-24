@@ -10,6 +10,12 @@ header {
   color: white;
   padding: 2rem 1rem;
   text-align: center;
+  line-height: 1.6;  /* 行間広げて読みやすく */
+  font-size: 1.2rem; /* 少し大きくして視認性アップ */
+}
+
+header p {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .container {
