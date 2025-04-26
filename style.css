@@ -10,8 +10,8 @@ header {
   color: white;
   padding: 2rem 1rem;
   text-align: center;
-  line-height: 1.6;  /* 行間広げて読みやすく */
-  font-size: 1.2rem; /* 少し大きくして視認性アップ */
+  line-height: 1.6;
+  font-size: 1.2rem;
 }
 
 header p {
@@ -28,11 +28,17 @@ section {
   margin-bottom: 3rem;
 }
 
-h2, h3 {
+h3 {
   color: #1e40af;
 }
 
 .skills, .works {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.tols {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
@@ -43,11 +49,8 @@ h2, h3 {
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.card:hover {
-  animation: bounce 0.4s ease; /* ポンっと拡大 */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  /* 最初はアニメーションなし */
 }
 
 .card img {
@@ -59,21 +62,15 @@ h2, h3 {
 
 /* バウンドアニメーション */
 @keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(0.97);
-  }
-  70% {
-    transform: scale(1.03);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  30% { transform: scale(1.1); }
+  50% { transform: scale(0.97); }
+  70% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.card.animate {
+  animation: bounce 0.8s ease;
 }
 
 footer {
@@ -83,10 +80,10 @@ footer {
   color: white;
 }
 
-/* スマホ対応用のレスポンシブ設定 */
+/* スマホ対応 */
 @media (max-width: 600px) {
   .skills, .works {
-    grid-template-columns: 1fr; /* カードを1列にする */
+    grid-template-columns: 1fr;
   }
 
   header {

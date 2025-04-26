@@ -35,28 +35,44 @@
 
   <section>
     <h2>スキル</h2>
+    <h3>言語・DB</h3>
     <div class="skills">
-      <div class="card">
+      <div class="card" style="--i:0;">
         HTML / CSS
         <img src="images/html-css-logo.jpg" alt="HTML/CSS">
       </div>
-      <div class="card">
+      <div class="card" style="--i:1;">
         JavaScript
         <img src="images/icons8-javascript-240.png" alt="JavaScript">
       </div>
-      <div class="card">
+      <div class="card" style="--i:2;">
         TypeScript / React
         <img src="images/icons8-タイプスクリプト-240.png" alt="TypeScript">
       </div>
-      <div class="card">
+      <div class="card" style="--i:3;">
         Python
         <img src="images/icons8-python-240.png" alt="Python">
       </div>
-      <div class="card">
+      <div class="card" style="--i:4;">
         Java / Spring Boot
         <img src="images/icons8-春のロゴ-240.png" alt="Java">
       </div>
+      <div class="card" style="--i:5;">
+        MySQL
+        <img src="images/logo-mysql-170x115.png" alt="MySQL">
+      </div>
     </div>
+      <h3>ツール</h3>
+        <div class="tols">
+          <div class="card" style="--i:6;">
+            VScode
+            <img src="images/icons8-ビジュアルスタジオコード-2019-240.png" alt="VScode">
+          </div>
+          <div class="card" style="--i:7;">
+            Git Hub
+            <img src="images/OIP.jpg" alt="Git Hub">
+          </div>
+        </div>
   </section>
   
 
@@ -73,7 +89,7 @@
       </div>
       <div class="card">
         <h3>会議室予約システム</h3>
-        <p>HTML/CSS/Java/Spring bootで制作中。7月中旬には販売予定</p>
+        <p>HTML/CSS/Java/Spring bootで制作中。6月中旬には販売予定</p>
       </div>
       <div class="card">
         <h3>顧客管理システム</h3>
@@ -86,6 +102,25 @@
 <footer>
   &copy; 2025 河野 樹 | Portfolio
 </footer>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  let current = 0;
+
+  function animateCard() {
+    cards[current].classList.add('animate');
+
+    setTimeout(() => {
+      cards[current].classList.remove('animate');
+      current = (current + 1) % cards.length; // 次のカードへ（ループ）
+      setTimeout(animateCard, 500); // 次のカードを0.5秒後に動かす
+    }, 1000); // アニメーション終了後（1秒後）に止める
+  }
+
+  window.addEventListener('load', () => {
+    setTimeout(animateCard, 500); // ページ読み込み後スタート
+  });
+</script>
 
 </body>
 </html>
